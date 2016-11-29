@@ -31,6 +31,10 @@ class Chef
             super
           end
 
+          def create(file_contents)
+            super(file_contents)
+            File.chmod(0600, file_path)
+          end
         end
       end
     end
